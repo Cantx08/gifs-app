@@ -1,59 +1,94 @@
+
 # GifsApp
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.6.
+Aplicación web desarrollada con Angular para buscar, visualizar y gestionar gifs animados utilizando la API de Giphy. Permite explorar tendencias, realizar búsquedas, ver historial y navegar entre diferentes categorías de gifs.
 
-## Development server
+## Características principales
 
-To start a local development server, run:
+- **Búsqueda de gifs:** Busca gifs animados usando palabras clave.
+- **Tendencias:** Visualiza los gifs más populares del momento.
+- **Historial:** Accede a búsquedas recientes y gifs vistos.
+- **Componentes reutilizables:** Incluye componentes como `gif-list`, `gif-list-item`, `side-menu`, entre otros.
+- **Servicios:** Integración con la API de Giphy a través de servicios Angular.
 
+## Estructura del proyecto
+
+```
+src/
+	app/
+		gifs/
+			components/
+				gif-list/
+				side-menu/
+			interfaces/
+			mapper/
+			pages/
+				dashboard-page/
+				gif-history/
+				search-page/
+				trending-page/
+			services/
+		shared/
+	environments/
+```
+
+## Requisitos previos
+
+- Node.js >= 18.x
+- Angular CLI >= 20.x
+
+## Instalación
+
+1. Clona el repositorio:
+	 ```bash
+	 git clone https://github.com/Cantx08/gifs-app.git
+	 cd gifs-app
+	 ```
+2. Instala las dependencias:
+	 ```bash
+	 npm install
+	 ```
+
+## Servidor de desarrollo
+
+Para iniciar el servidor local:
 ```bash
 ng serve
 ```
+Abre tu navegador en `http://localhost:4200/`.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Scripts útiles
 
-## Code scaffolding
+- **Construir el proyecto:**
+	```bash
+	ng build
+	```
+- **Ejecutar pruebas unitarias:**
+	```bash
+	ng test
+	```
+- **Generar componentes, servicios, etc.:**
+	```bash
+	ng generate component nombre-componente
+	ng generate service nombre-servicio
+	```
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Uso de componentes
 
-```bash
-ng generate component component-name
+Ejemplo de uso del componente `gif-list`:
+```html
+<gif-list [gifs]="gifsArray"></gif-list>
 ```
+Donde `gifsArray` es un arreglo de objetos tipo gif definido en el componente padre.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Personalización y extensión
 
-```bash
-ng generate --help
-```
+Puedes agregar nuevos componentes, páginas o servicios usando Angular CLI. La estructura modular facilita la extensión de funcionalidades.
 
-## Building
+## Recursos adicionales
 
-To build the project run:
+- [Documentación Angular](https://angular.dev/)
+- [API de Giphy](https://developers.giphy.com/docs/)
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+Desarrollado por Andrés Cantuña
